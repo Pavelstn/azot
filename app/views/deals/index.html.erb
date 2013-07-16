@@ -1,0 +1,62 @@
+<h1>Товары</h1> 
+
+<%#= form_tag(:controller => "deals", :action => "index") do %>
+<%#= select(:form,:category_id,  Category.all.collect {|p| [ p.path.map{|i| i.name.to_s}, p.name, p.id ] }, {:include_blank => 'Категория-'})%>
+<%#= select( :form,:region_id, Region.all.collect { |p| [p.name, p.id] }, {:include_blank => 'Город'}) %>
+<%#= submit_tag("Выбрать") %>
+<%# end %>
+
+<%= form_for @cf, :url => { :action => "index" } do |f| %>
+<%= f.select(:category_id,  Category.all.collect {|p| [ p.path.map{|i| i.name.to_s}, p.name, p.id ] }, {:include_blank => 'Категория-'})%>
+  <%= f.submit "Выбрать" %>
+<% end %>
+<a href="/deals/destroy_all" class="btn btn-danger">Удалить все!</a>
+<hr>
+
+
+<%= link_to  new_deal_path, :class=>"btn btn-info" do %><i class="icon-gift"></i>Добавить товар<%end%> 
+<table class="table table-striped">
+  <tr>
+    
+    <th>Тип</th>
+    <th>Категория</th>
+    <th>Активно</th>
+    <th>Удалено</th>
+    <th>На главной</th>
+    <th>Заголовок</th>
+    <th>Стоимость</th>
+
+   <!-- <th>Кликов</th>
+    <th>Посещений</th> -->
+    <th>Начало</th>
+    <th>Окончание</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deals.each do |deal| %>
+  <tr>
+  
+    <td><%= deal.type.try(:name) %></td>
+    <td><%= deal.category.try(:name) %></td>
+    <td><%if deal.active %> Активно <%else%>Неактивно <% end %></td>
+    <td><%if deal.isdelete %> Да <%else%>Нет<% end %></td>
+    <td><%if deal.top %> Да <%else%>Нет<% end %></td>
+    <td><%= deal.title %></td>
+    <td><%= deal.costs %></td>
+   <!-- <td><%#= deal.click %></td>
+    <td><%#= deal.visit %></td> -->
+    <td><%= deal.start_action %></td>
+    <td><%= deal.stop_action %></td>
+    <td><%= link_to 'Show', deal %></td>
+    <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
+    <td><%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%#= link_to 'New Deal', new_deal_path %>
+<%= link_to  new_deal_path, :class=>"btn btn-info" do %><i class="icon-gift"></i>Добавить товар<%end%> 

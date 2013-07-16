@@ -1,0 +1,49 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$radius: 7px;
+
+.border_radius{
+    border-style: solid;
+    border-width: 0px;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.category {
+  @extend .border_shadow;
+  @extend .border_radius;
+  border-width: 1px;
+  }
+
+  .nested_category {
+  margin-left: 30px;
+}
+
+.nested_category .nested_category .nested_category .nested_category {
+  margin-left: 0;
+}
+
+.category {
+  margin: 8px 0;
+  padding: 8px 15px;
+  border: solid 1px #999;
+  width: 300px;
+  border-radius: 12px;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, #CCC),
+      color-stop(1, #F5F5F5)
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      #CCC 0%,
+      #F5F5F5 100%
+  );
+}

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  active: false
+  order: 1
+  name: MyString
+  aliasname: MyString
+
+two:
+  active: false
+  order: 1
+  name: MyString
+  aliasname: MyString

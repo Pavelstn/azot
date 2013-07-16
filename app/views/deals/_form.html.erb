@@ -1,0 +1,115 @@
+<%#= javascript_include_tag "ckeditor/init" %>
+<%= form_for(@deal) do |f| %>
+  <% if @deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+
+      <ul>
+      <% @deal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+ <div class="span1">Тип:</div>
+  <div class="span3">
+
+    <%= f.select(:type_id, Type.all.collect {|p| [ p.name, p.id ] }, options ={:prompt => "-Выбор типа"})%>
+  </div>
+
+  <div class="span1">Категория:</div>
+  <div class="span3">
+    <%#= f.number_field :category_id %>
+    <%#= f.select(:category_id, Category.all.collect {|p| [ p.name, p.id ] })%>
+    <%= f.select(:category_id, Category.all.collect {|p| [ p.path.map{|i| i.name.to_s}, p.name, p.id ] })%>
+  </div>
+
+  <div class="span1">Регион:</div>
+  <div class="span3">
+    <%#= f.number_field :region_id %>
+    <%= f.select(:region_id, Region.all.collect { |p| [ p.name, p.id ] }, options ={:prompt => "-Выбор региона"})%>
+  </div>
+</div> <!--class="row" -->
+
+<div class="row">
+  <div class="span1">Партнер:</div>
+  <div class="span3">
+    <%#= f.number_field :partner_id %>
+    <%= f.select(:partner_id, Partner.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'Нет-'}, options ={:prompt => "-Выбор Партнера"})%>
+  </div>
+
+  <div class="span1">Пользователь:</div>
+  <div class="span3"><%= f.number_field :user_id, :disabled=>true%></div>
+</div> <!--class="row" -->
+
+<div class="row">
+  <div class="span1">Активно:</div>
+  <div class="span1"><%= f.check_box :active %></div>
+
+  <div class="span1">Удалено:</div>
+  <div class="span1"><%= f.check_box :isdelete %></div>
+
+  <div class="span2">На главной:</div>
+  <div class="span1"><%= f.check_box :top %></div>
+
+  <div class="span1">Стоимость:</div>
+  <div class="span2"><%= f.text_field :costs %></div>
+</div> <!--class="row" -->
+<hr>
+<div class="row">
+  <div class="span2">Заголовок</div>
+  <div class="span3"><%= f.text_field :title, :id=>"title_field" %></div> 
+</div> <!--class="row" -->
+<div class="row">
+  <div class="span2">Краткое описание</div>
+  <div class="span3"><%= f.text_field :shortdescription, :size => 150, :id=>"shortdescription_field" %></div> 
+</div> <!--class="row" -->
+  
+ 
+  <div class="row">
+    <div class="span10">
+    Описание<br />
+    <%#= f.text_area :description %>
+    <%= f.text_area :description, :size => "80x80", :id=>"text_field" %>
+    </div>
+  </div> <!--class="row" -->
+<hr>
+<div class="row">
+  <div class="span1">Картинка</div>
+  <div class="span3"><%= f.text_field :imgurl %></div> 
+
+  <div class="span2">Маленькая картинка</div>
+  <div class="span3"><%= f.text_field :smallimgurl %></div> 
+</div> <!--class="row" -->
+
+ <div class="row">
+  <div class="span1">Ссылка</div>
+  <div class="span3"><%= f.text_field :url %></div> 
+
+  <div class="span2">Сокр. ссылка</div>
+  <div class="span3"><%= f.text_field :shorturl %></div> 
+</div> <!--class="row" -->
+
+ <div class="row">
+  <div class="span1">Посещений</div>
+  <div class="span3"><%= f.number_field :visit , :disabled=>true %></div> 
+
+  <div class="span2">Кликов</div>
+  <div class="span3"><%= f.number_field :click, :disabled=>true %></div> 
+</div> <!--class="row" -->
+ 
+
+  <div class="field">
+    <%= f.label :start_action %><br />
+    <%= f.datetime_select :start_action %>
+  </div>
+  <div class="field">
+    <%= f.label :stop_action %><br />
+    <%= f.datetime_select :stop_action %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

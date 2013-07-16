@@ -1,0 +1,4 @@
+<%= nested_categories @category.subtree.arrange(:order => :created_at) %>
+
+<p><%= link_to "Назад к списку", categories_path %>
+<%#= link_to "Назад к списку", :back %></p></p>

@@ -1,0 +1,35 @@
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= f.hidden_field :parent_id %>
+
+<div class="row">
+  <div class="span1">Название</div>
+  <div class="span3"><%= f.text_field :name %></div> 
+
+  <div class="span2">Алт.название</div>
+  <div class="span3"><%= f.text_field :aliasname %></div> 
+</div> <!--class="row" -->
+<div class="row">
+   <div class="span1">Порядок</div>
+  <div class="span3"><%= f.number_field :order %></div>
+
+  <div class="span2">Активно</div>
+  <div class="span1"><%= f.check_box :active %></div> 
+  <div class="span3"><%= f.submit %></div> 
+</div> <!--class="row" -->
+
+<div class="row">
+  
+</div> <!--class="row" -->
+
+<% end %>

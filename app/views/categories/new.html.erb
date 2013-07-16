@@ -1,0 +1,7 @@
+<h1>New category</h1>
+<%= render @category.parent if @category.parent %>
+
+<%= render "form" %>
+
+<p><%= link_to "Back to categories", categories_path %><%#= link_to "Back to categories", :back %></p>
+

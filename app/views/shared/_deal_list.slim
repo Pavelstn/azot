@@ -1,0 +1,25 @@
+div class="row" id="items_list"
+	ul class="deal_list"
+		-@deals.each do |deal|
+			li class="span4 item_thumb"
+				-link="/"
+				-deal.try(:category).try(:path).try(:each) do |cat|
+					-link= link+cat.try(:aliasname)+"/"
+				-link= link+(deal.id).to_s
+				
+				a href=link
+					div class="span4 element_list"
+						div class="image_thumb" style="background-image: url(#{deal.smallimgurl});"
+							div class="region_name_thumb"
+								=deal.region.try(:name)
+						div class="description_deal_list"
+							= truncate(deal.title, length: 140)
+						div class="row price_deal_list"
+							div class="span6 price_show"
+								h4 class="thumb_price"
+									' От
+									=' deal.costs
+									| р.
+							div class="span6 just_do_it"
+								|Подробнее &raquo;
+

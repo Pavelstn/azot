@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Edit', edit_deal_path(@deal) %> |
+<%= link_to 'Back', deals_path %>
+
+<%= render "shared/show_deal" %>
+
+  <div class="field">
+    От<br />
+    <%= @deal.start_action %>
+  </div>
+  <div class="field">
+    До<br />
+    <%= @deal.stop_action %>
+  </div>
+
+<%= link_to 'Edit', edit_deal_path(@deal) %> |
+<%= link_to 'Back', deals_path %>

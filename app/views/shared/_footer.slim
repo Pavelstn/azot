@@ -1,0 +1,19 @@
+div class="nail"
+div class="footer"
+  div class="row"
+    div class="span2"
+      p
+        a href="http://compmagic.ru/" &copy; Compmagic 2013
+        '
+        i class="icon-user" id="login_push"
+        
+
+    div class="span2"
+      -if user_signed_in?
+        = link_to('Выход', destroy_user_session_path, :method => 'delete', :class=>'header_login')
+      -else
+        div id="login_cover"
+          a class="header_login" href="/users/sign_in" Вход
+          a class="header_login" href="/users/sign_up"Регистрация
+ 
+    div class="span4 offset8"

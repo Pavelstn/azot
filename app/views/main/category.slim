@@ -1,0 +1,6 @@
+= content_for :title, "Главкупон: "+@category.name
+= render "shared/banners/google_adsense"
+= render "shared/subcategory_nav"
+/= render "shared/category_path"
+h2 =@category.name 
+= render "shared/deal_list"

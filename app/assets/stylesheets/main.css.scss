@@ -1,0 +1,174 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "shadow_and_round";
+
+
+
+
+.backgound_image{
+  background-repeat: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+#page_image{
+  @extend .border_radius;
+  @extend .backgound_image;
+  @extend .border_shadow;
+  height: 370px !important;
+  margin-left: 5px !important;
+}
+
+
+.deals{
+  margin-left: 0px !important;
+}
+////THUMBINAL
+$t_height: 300;
+#items_list{
+  margin-left: 0px !important;
+}
+.item_thumb{
+  margin-left: 0px !important;
+  margin-right: 10px !important;  
+}
+.element_list {
+  @extend .border_shadow;
+  @extend .border_radius;
+  border-width: 0px;
+  height: 300px;
+  width: 280px !important;
+  
+  margin-bottom: 15px;
+  background-color: #ffffff;
+
+}
+.element_list:hover{
+  background-color: #c4ebfb;
+}
+.image_thumb{
+  @extend .backgound_image;
+  @extend .top_right_radius;
+  @extend .top_left_radius;
+  height: 170px !important; 
+}
+.region_name_thumb{
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  @extend .top_right_radius;
+  @extend .top_left_radius;
+}
+
+.description_deal_list{
+  height: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.price_deal_list{
+  color: rgb(248, 238, 178);
+  background-color: #5bb75b;
+  margin-left: 0px !important;
+  @extend .bottom_radius;
+  padding-bottom: 0px !important;
+}
+
+.price_show{
+  text-align: center;
+}
+
+.thumb_price{
+  margin-top: 5px !important;
+  margin-bottom: 0px !important;
+  color: #f8eeb2;
+}
+
+.just_do_it{
+ @extend .bottom_right_radius;
+ //margin-left: 8px !important;
+ padding-top: 5px !important;
+ text-align: center;
+ color: #fff;
+ text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+ vertical-align: middle;
+ cursor: pointer;
+ background-image: -moz-linear-gradient(top,#08c,#04c);
+ background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
+ background-image: -webkit-linear-gradient(top,#08c,#04c);
+ background-image: -o-linear-gradient(top,#08c,#04c);
+ background-image: linear-gradient(to bottom,#08c,#04c);
+ background-repeat: repeat-x;
+ background-repeat-x: repeat;
+ background-repeat-y: no-repeat;
+}
+
+noindex:-o-prefocus,.just_do_it {
+  margin-left: 6px !important;
+}
+
+a .description_deal_list{
+    color: rgb(0, 0, 0) !important;
+  }
+
+  /////////////////
+
+.hero-unit{
+    background-color: #9E005D !important; 
+  }
+
+#hero-unit_h1{
+    color: white;
+    font-size: 950% !important; 
+    text-shadow: 1px 1px 2px black, 0 0 1em white;
+  }
+
+#hero-unit_h2{
+    color:  #9E005D !important;
+    background-color: white;
+  }
+
+.page_container{
+    @extend .border_radius;
+    /*background-color: rgba(255, 255, 255, 0.8) !important; */
+    background-color: #e7f0dd !important; 
+    /*background-color: #9E005D !important; */
+    /*margin-left: 0px !important;*/
+  }
+
+#page_caption{
+  margin: 7px;
+}
+.some_page{
+    margin-left: 10px  !important; 
+  }
+
+#page_action{
+    margin-left: 10px  !important; 
+    text-align: center;
+  }
+
+#page_description{
+    padding-left: 7px;
+  }
+
+.regions{
+    @extend .border_radius;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+.subcategory_nav{
+    font-size: 25px;
+  }
+
+  .accordion-toggle{
+    text-align: center;
+    color: white;
+    background-color: #08c;
+    margin-right: 7px !important;
+  }
+

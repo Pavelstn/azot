@@ -1,0 +1,54 @@
+ <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+
+      <a class="brand" href="/">Главкупон</a>
+
+      
+      <ul class="nav">
+      <!-- <li ><a href="#">*********</a></li> -->
+       <li class="dropdown">
+        <!--
+        <a class="dropdown-toggle" data-toggle="dropdown"  href="#">
+         Город
+         <b class="caret"></b>
+       </a> 
+     -->
+       <ul class="dropdown-menu" id="region_list"></ul>
+
+     </li>
+
+     <% if user_signed_in? %>
+     <% if current_user.role=="admin" || current_user.role=="manager" %>
+     <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown"  href="#">
+       Админка
+       <b class="caret"></b>
+     </a>
+     <ul class="dropdown-menu">
+
+       <!-- links -->
+       <li><a href="/deals">Товары</a></li>
+       <li><a href="/regions">Регионы</a></li>
+       <li><a href="/partners">Партнеры</a></li>
+       <li><a href="/types">Типы</a></li>
+       <li><a href="/categories">Категории</a></li>
+       <li><a href="/stat">Статистика</a></li>
+       <li><a href="/usermanage">Пользователь</a></li>
+
+     </ul>
+   </li>
+   <% end %>
+   <% end %>
+ </ul>
+ 
+
+ <div class="navbar pull-right" id="search_box">
+ <%#= render "shared/google_adsence_search" %>
+ </div>
+</div>
+
+</div>
+</div>
+<div class="topspaser">
+      </div>

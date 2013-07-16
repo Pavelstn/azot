@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /deals
+Disallow: /regions
+Disallow: /partners
+Disallow: /stat
+Disallow: /categories
+Host: glavcoupon.ru

@@ -1,0 +1,45 @@
+= content_for :partner_banner, raw(@deal.partner.try(:banner))
+div class="row-fluid" id="page_caption"
+	div class="span12"
+		h2 = @deal.title
+
+-link3= @deal.url+ @deal.partner.try(:partnercode)
+
+div class="row-fluid" id="page_content"
+	a href=link3 class="click_link" target="_blank" id={@deal.id}
+		div class="span8" id="page_image" style="background-image: url(#{@deal.imgurl} );"
+
+	div class="span4" id="page_action"
+		h1 
+			=@deal.partner.try(:name)  
+			'
+			=@deal.region.try(:name)
+		hr
+		h3
+			|Цена: 
+			=@deal.try(:costs)
+			'
+			|р.
+		a href={@deal.url+ @deal.partner.try(:partnercode)} class="btn btn-success btn-large click_link" target="_blank" id={@deal.id} Перейти на сайт
+		hr
+		= render "shared/banners/share_buttons"
+/br
+div class="row-fluid" id="page_texts"
+	div class="span12" id="page_description"
+		div class="accordion" id="accordion2"
+			div class="accordion-group"
+				div class="accordion-heading"
+					a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" 
+						| Описание подробно 
+						i class="icon-chevron-down"
+				div id="collapseOne" class="collapse"
+					div class="accordion-inner"
+						=raw @deal.description
+						br
+						a href={@deal.url+ @deal.partner.try(:partnercode)} class="btn btn-success btn-large click_link" target="_blank" id={@deal.id} Перейти на сайт
+		
+		
+		
+
+/hr
+

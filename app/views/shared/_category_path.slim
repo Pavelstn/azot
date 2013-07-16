@@ -1,0 +1,8 @@
+ul class="breadcrumb"
+	-@category_path.each do |category_item|
+		li
+			a href="/catalog/#{category_item.id}"
+				=category_item.name
+			span class="divider"
+  	li class="active"
+  		= @active_title

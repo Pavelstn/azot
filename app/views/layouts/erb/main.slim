@@ -1,0 +1,42 @@
+DOCTYPE html
+html lang="en"
+  head
+    meta charset="utf-8"
+    title =h yield(:title)
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta name="description" content=""
+    meta name="author" content=""
+    meta name="verify-admitad" content="5e63cd7106" 
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags 
+    link href="/css/bootstrap.min.css" rel="stylesheet"
+    /! HTML5 shim, for IE6-8 support of HTML5 elements
+    link rel="shortcut icon" href="/img/favicon.ico"
+  
+  body
+    -if user_signed_in?
+      = render "shared/navbar" 
+    
+    = render "shared/top_menu"
+    div class="container-fluid"
+      div class="row-fluid"
+        div class="span3"
+          = render "shared/sidebar-nav"
+          = render "shared/banners/left_side_banner2"
+          = render "shared/banners/left_side_banner1"
+          = yield(:partner_banner)
+
+          
+        div class="span9 some_page"
+          = yield
+
+        
+    hr
+
+    footer
+      = render "shared/footer"
+      = render "shared/google_analytics"
+
+    = render "shared/javascripts"
+    = render "shared/banners/share_buttons"

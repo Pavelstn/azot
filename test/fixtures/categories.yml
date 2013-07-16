@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type_id: 1
+  active: false
+  order: 1
+  name: MyString
+  aliasname: MyString
+
+two:
+  type_id: 1
+  active: false
+  order: 1
+  name: MyString
+  aliasname: MyString

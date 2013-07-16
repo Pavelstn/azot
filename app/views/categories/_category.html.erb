@@ -1,0 +1,13 @@
+<div class="category">
+    <div class="content">
+    <%= link_to category.name, category %>|
+    <%= category.aliasname %> |
+    <%if category.active %> Активно <%else%>Неактивно <% end %>
+    <%#= link_to category.altname, category %>
+  </div>
+  <div class="actions">
+    <%= link_to "Добавить", new_category_path(:parent_id => category) %> |
+    <%= link_to 'Редактировать', edit_category_path(category) %> |
+    <%= link_to "Удалить", category, :confirm => "Are you sure?", :method => :delete %>
+  </div>
+</div>

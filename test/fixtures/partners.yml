@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  active: false
+  name: MyString
+  aliasname: MyString
+  partnercode: MyString
+  partnersite: MyString
+  banner: MyText
+
+two:
+  active: false
+  name: MyString
+  aliasname: MyString
+  partnercode: MyString
+  partnersite: MyString
+  banner: MyText

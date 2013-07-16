@@ -1,0 +1,10 @@
+= content_for :title, "Главкупон: "+@deal.category.try(:name)+"- "+@deal.title 
+/= render "shared/subcategory_nav"
+/= render "shared/category_path" 
+
+div class="page_container"
+	= render "shared/show_deal"
+	= render "shared/banners/google_adsense"
+
+hr
+= render "shared/deal_list"

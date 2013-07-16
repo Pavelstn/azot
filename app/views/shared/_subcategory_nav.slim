@@ -1,0 +1,10 @@
+ul class="nav nav-pills regions"
+	-@subcategories.each do |subcategory|
+		-if subcategory.active
+			li class="subcategory_nav" 
+				-link2=""
+				-subcategory.path.each do |cat|
+					-link2= link2+"/"+cat.try(:aliasname)
+				 
+				a href=link2
+					=subcategory.name
